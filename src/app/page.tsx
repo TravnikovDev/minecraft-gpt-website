@@ -581,41 +581,111 @@ const MinecraftBotLanding = () => {
         </div>
       </section>
 
-      {/* Code Sample Preview */}
+      {/* Project Overview Section */}
       <section className="py-16 px-6 bg-[#2F2F2F]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center text-[#E7A83B]">
-            Command Interface Preview
+            About The Project
           </h2>
 
           <div className="bg-[#232B2B] rounded p-6 pixel-border overflow-hidden">
-            <div className="bg-[#1D1F21] p-4 rounded font-mono text-sm md:text-base overflow-x-auto pixel-border">
-              <pre className="text-gray-300">
-                {`// Command the bot to build structures
-bot.command("build cabin medium oak")
-bot.command("build castle large stone")
-bot.command("build farm wheat 10x10")
-
-// Instruct the bot to gather resources
-bot.command("mine diamonds efficiency=3 duration=20m")
-bot.command("harvest wood oak amount=64")
-bot.command("collect ores depth=12 radius=30")
-
-// Combat and protection commands
-bot.command("defend perimeter radius=50")
-bot.command("attack nearest hostile")
-bot.command("follow player steve distance=5")`}
-              </pre>
-            </div>
-            <div className="mt-4 flex justify-between items-center">
-              <p className="text-gray-400 text-sm">
-                Simple text commands control the bot&apos;s neural network
+            <div className="prose prose-invert max-w-none">
+              <p className="text-lg mb-6">
+                Minecraft-GPT is an intelligent Minecraft bot designed to
+                interact with the Minecraft world and players in an engaging,
+                natural manner. The objective of this project is to create a bot
+                that behaves like a new player—learning, exploring, and
+                interacting with both the environment and other players.
               </p>
+
+              <h3 className="text-xl font-bold text-[#5D7C15] mt-8 mb-4">
+                Features
+              </h3>
+              <ul className="space-y-2 text-gray-300 list-disc pl-6 mb-6">
+                <li>
+                  <strong className="text-[#E7A83B]">
+                    Autonomous Interaction:
+                  </strong>{" "}
+                  The bot can interact with the Minecraft world, including
+                  chatting with players, gathering resources, and building
+                  structures.
+                </li>
+                <li>
+                  <strong className="text-[#E7A83B]">Survival Skills:</strong>{" "}
+                  It performs essential survival tasks such as finding food,
+                  crafting tools, and defending against enemies.
+                </li>
+                <li>
+                  <strong className="text-[#E7A83B]">Custom Commands:</strong>{" "}
+                  The bot's capabilities can easily be extended with custom
+                  commands.
+                </li>
+                <li>
+                  <strong className="text-[#E7A83B]">
+                    Intelligent Conversations:
+                  </strong>{" "}
+                  Powered by OpenAI's ChatGPT, the bot can engage in meaningful
+                  conversations with players.
+                </li>
+                <li>
+                  <strong className="text-[#E7A83B]">
+                    Multilingual Support:
+                  </strong>{" "}
+                  The bot can accept commands in multiple languages, making it
+                  accessible to a broader audience.
+                </li>
+                <li>
+                  <strong className="text-[#E7A83B]">
+                    Bot-to-Bot Interaction:
+                  </strong>{" "}
+                  Bots can interact with each other, simulating natural player
+                  behavior within the game world.
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-bold text-[#5D7C15] mt-8 mb-4">
+                Technology Stack
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="bg-[#1D1F21] p-4 rounded pixel-border text-center">
+                  <div className="text-[#5D7C15] font-bold mb-1">
+                    TypeScript
+                  </div>
+                  <div className="text-xs text-gray-400">Language</div>
+                </div>
+                <div className="bg-[#1D1F21] p-4 rounded pixel-border text-center">
+                  <div className="text-[#5D7C15] font-bold mb-1">Bun.js</div>
+                  <div className="text-xs text-gray-400">Runtime</div>
+                </div>
+                <div className="bg-[#1D1F21] p-4 rounded pixel-border text-center">
+                  <div className="text-[#5D7C15] font-bold mb-1">
+                    Mineflayer
+                  </div>
+                  <div className="text-xs text-gray-400">Bot Framework</div>
+                </div>
+                <div className="bg-[#1D1F21] p-4 rounded pixel-border text-center">
+                  <div className="text-[#5D7C15] font-bold mb-1">OpenAI</div>
+                  <div className="text-xs text-gray-400">AI Integration</div>
+                </div>
+              </div>
+
+              <div className="bg-[#1D1F21] p-4 rounded-lg border-l-4 border-[#E7A83B] mt-6">
+                <p className="italic text-gray-300">
+                  "The author (Roman Travnikov) is not an experienced Minecraft
+                  player, thus the bot is designed to behave like a beginner
+                  exploring the Minecraft world."
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center">
               <a
-                href="#"
-                className="text-[#5D7C15] hover:text-[#7DAF2B] transition text-sm"
+                href="https://github.com/TravnikovDev/minecraft-gpt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="minecraft-button inline-block bg-[#4C4C4C] hover:bg-[#5D7C15] text-white py-2 px-6 rounded font-medium transition"
               >
-                View full documentation →
+                <FaGithub className="inline-block mr-2" /> View on GitHub
               </a>
             </div>
           </div>
@@ -629,7 +699,7 @@ bot.command("follow player steve distance=5")`}
             Follow Our Progress
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <a
               href="https://youtube.com/@minecraft-gpt"
               target="_blank"
@@ -650,6 +720,17 @@ bot.command("follow player steve distance=5")`}
               <FaTiktok size={40} className="mx-auto mb-4 text-[#3BABE7]" />
               <p className="font-medium">TikTok</p>
               <p className="text-xs text-gray-400 mt-1">Quick Tips</p>
+            </a>
+
+            <a
+              href="https://instagram.com/minecraft_gpt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#1D1F21] rounded p-6 text-center pixel-border hover:bg-[#2F2F2F] transition"
+            >
+              <FaInstagram size={40} className="mx-auto mb-4 text-[#C13584]" />
+              <p className="font-medium">Instagram</p>
+              <p className="text-xs text-gray-400 mt-1">Build Showcases</p>
             </a>
 
             <a
