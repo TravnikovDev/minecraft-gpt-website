@@ -69,7 +69,7 @@ const MinecraftBotLanding = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 md:py-32 px-6">
         {/* Minecraft-style dirt background overlay */}
-        <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://i.imgur.com/FJtIlxSl.png')] bg-repeat"></div>
+        <div className="absolute inset-0 z-0 opacity-20 bg-[url('/images/dirt-bg.png')] bg-repeat"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#5D7C15]">
@@ -296,7 +296,7 @@ const MinecraftBotLanding = () => {
                 <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
-                      <div className="absolute inset-0 bg-[url('https://i.imgur.com/L2YQHcf.jpg')] bg-cover bg-center"></div>
+                      <div className="absolute inset-0 bg-[url('/images/video1.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
                       {/* Absolutely centered play button */}
@@ -342,7 +342,7 @@ const MinecraftBotLanding = () => {
                 <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
-                      <div className="absolute inset-0 bg-[url('https://i.imgur.com/8vKo27j.jpg')] bg-cover bg-center"></div>
+                      <div className="absolute inset-0 bg-[url('/images/video2.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
                       {/* Absolutely centered play button */}
@@ -388,7 +388,7 @@ const MinecraftBotLanding = () => {
                 <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
-                      <div className="absolute inset-0 bg-[url('https://i.imgur.com/JdnMYa9.jpg')] bg-cover bg-center"></div>
+                      <div className="absolute inset-0 bg-[url('/images/video3.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
                       {/* Absolutely centered play button */}
@@ -433,7 +433,7 @@ const MinecraftBotLanding = () => {
                 <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
-                      <div className="absolute inset-0 bg-[url('https://i.imgur.com/ZqPJkmY.jpg')] bg-cover bg-center"></div>
+                      <div className="absolute inset-0 bg-[url('/images/video4.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
                       {/* Absolutely centered play button */}
@@ -478,7 +478,7 @@ const MinecraftBotLanding = () => {
                 <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
-                      <div className="absolute inset-0 bg-[url('https://i.imgur.com/Dk2QVbS.jpg')] bg-cover bg-center"></div>
+                      <div className="absolute inset-0 bg-[url('/images/video5.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
                       {/* Absolutely centered play button */}
@@ -718,7 +718,7 @@ const MinecraftBotLanding = () => {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-40 h-40 rounded-lg overflow-hidden flex-shrink-0 pixel-border">
                 <img
-                  src="https://avatars.githubusercontent.com/u/2178637?v=4"
+                  src="/images/developer-avatar.png"
                   alt="Roman Travnikov"
                   className="w-full h-full object-cover"
                 />
@@ -792,7 +792,7 @@ const MinecraftBotLanding = () => {
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded overflow-hidden flex-shrink-0 pixel-border">
                   <img
-                    src="https://i.imgur.com/qwFQ1im.png"
+                    src="/images/steve-avatar.png"
                     alt="Steve Avatar"
                     className="w-full h-full object-cover pixelated"
                   />
@@ -820,7 +820,7 @@ const MinecraftBotLanding = () => {
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded overflow-hidden flex-shrink-0 pixel-border">
                   <img
-                    src="https://i.imgur.com/FjQUMJv.png"
+                    src="/images/alex-avatar.png"
                     alt="Alex Avatar"
                     className="w-full h-full object-cover pixelated"
                   />
