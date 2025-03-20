@@ -153,3 +153,18 @@ body {
   right: 0;
   bottom: 0;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Pixel border style */
+.pixel-border {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+}

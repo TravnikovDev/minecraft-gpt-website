@@ -275,7 +275,7 @@ const MinecraftBotLanding = () => {
         </div>
       </section>
 
-      {/* Horizontal Scrolling Videos Section */}
+      {/* Horizontal Scrolling Videos Section - UPDATED */}
       <section id="videos" className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-6 text-[#E7A83B]">
@@ -295,28 +295,29 @@ const MinecraftBotLanding = () => {
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#1D1F21] to-transparent z-10 pointer-events-none"></div>
 
             <div className="flex overflow-x-auto pb-8 hide-scrollbar space-x-6">
-              {/* Video Card 1 */}
+              {/* Video Card 1 - UPDATED */}
               <div className="flex-shrink-0 video-card">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border">
-                  <div className="relative">
-                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21]">
+                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                  <div className="relative flex-grow">
+                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('https://i.imgur.com/L2YQHcf.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
-                          <svg
-                            className="w-8 h-8"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
-                              fill="white"
-                              stroke="white"
-                            />
-                          </svg>
-                        </div>
+
+                      {/* Absolutely centered play button */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                        <svg
+                          className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
                       </div>
+
                       <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
                         0:42
                       </div>
@@ -326,7 +327,9 @@ const MinecraftBotLanding = () => {
                       Building
                     </div>
                   </div>
-                  <div className="p-4">
+
+                  {/* Content positioned at the bottom */}
+                  <div className="p-4 mt-auto">
                     <h3 className="text-lg font-bold text-[#5D7C15]">
                       Automated House Construction
                     </h3>
@@ -336,42 +339,31 @@ const MinecraftBotLanding = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center mt-3">
-                  <div className="w-8 h-8 rounded-full overflow-hidden pixel-border">
-                    <img
-                      src="https://i.imgur.com/J7RfQlI.png"
-                      alt="Dev Avatar"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <span className="text-sm ml-2 text-gray-400">
-                    MinecraftBot
-                  </span>
-                </div>
               </div>
 
-              {/* Video Card 2 */}
-              <div className="flex-shrink-0 w-[350px]">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border">
-                  <div className="relative">
-                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21]">
+              {/* Video Card 2 - UPDATED */}
+              <div className="flex-shrink-0 video-card">
+                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                  <div className="relative flex-grow">
+                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('https://i.imgur.com/8vKo27j.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
-                          <svg
-                            className="w-8 h-8"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
-                              fill="white"
-                              stroke="white"
-                            />
-                          </svg>
-                        </div>
+
+                      {/* Absolutely centered play button */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                        <svg
+                          className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
                       </div>
+
                       <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
                         0:57
                       </div>
@@ -381,7 +373,9 @@ const MinecraftBotLanding = () => {
                       Mining
                     </div>
                   </div>
-                  <div className="p-4">
+
+                  {/* Content positioned at the bottom */}
+                  <div className="p-4 mt-auto">
                     <h3 className="text-lg font-bold text-[#5D7C15]">
                       Diamond Mining Expedition
                     </h3>
@@ -391,42 +385,31 @@ const MinecraftBotLanding = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center mt-3">
-                  <div className="w-8 h-8 rounded-full overflow-hidden pixel-border">
-                    <img
-                      src="https://i.imgur.com/J7RfQlI.png"
-                      alt="Dev Avatar"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <span className="text-sm ml-2 text-gray-400">
-                    MinecraftBot
-                  </span>
-                </div>
               </div>
 
-              {/* Video Card 3 */}
-              <div className="flex-shrink-0 w-[350px]">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border">
-                  <div className="relative">
-                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21]">
+              {/* Video Card 3 - UPDATED */}
+              <div className="flex-shrink-0 video-card">
+                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                  <div className="relative flex-grow">
+                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('https://i.imgur.com/JdnMYa9.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
-                          <svg
-                            className="w-8 h-8"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
-                              fill="white"
-                              stroke="white"
-                            />
-                          </svg>
-                        </div>
+
+                      {/* Absolutely centered play button */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                        <svg
+                          className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
                       </div>
+
                       <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
                         1:24
                       </div>
@@ -436,7 +419,9 @@ const MinecraftBotLanding = () => {
                       Combat
                     </div>
                   </div>
-                  <div className="p-4">
+
+                  {/* Content positioned at the bottom */}
+                  <div className="p-4 mt-auto">
                     <h3 className="text-lg font-bold text-[#5D7C15]">
                       Creeper Defense System
                     </h3>
@@ -445,42 +430,31 @@ const MinecraftBotLanding = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center mt-3">
-                  <div className="w-8 h-8 rounded-full overflow-hidden pixel-border">
-                    <img
-                      src="https://i.imgur.com/J7RfQlI.png"
-                      alt="Dev Avatar"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <span className="text-sm ml-2 text-gray-400">
-                    MinecraftBot
-                  </span>
-                </div>
               </div>
 
-              {/* Video Card 4 */}
-              <div className="flex-shrink-0 w-[350px]">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border">
-                  <div className="relative">
-                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21]">
+              {/* Video Card 4 - UPDATED */}
+              <div className="flex-shrink-0 video-card">
+                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                  <div className="relative flex-grow">
+                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('https://i.imgur.com/ZqPJkmY.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
-                          <svg
-                            className="w-8 h-8"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
-                              fill="white"
-                              stroke="white"
-                            />
-                          </svg>
-                        </div>
+
+                      {/* Absolutely centered play button */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                        <svg
+                          className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
                       </div>
+
                       <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
                         0:38
                       </div>
@@ -490,7 +464,9 @@ const MinecraftBotLanding = () => {
                       Farming
                     </div>
                   </div>
-                  <div className="p-4">
+
+                  {/* Content positioned at the bottom */}
+                  <div className="p-4 mt-auto">
                     <h3 className="text-lg font-bold text-[#5D7C15]">
                       Automated Crop Farming
                     </h3>
@@ -499,42 +475,31 @@ const MinecraftBotLanding = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center mt-3">
-                  <div className="w-8 h-8 rounded-full overflow-hidden pixel-border">
-                    <img
-                      src="https://i.imgur.com/J7RfQlI.png"
-                      alt="Dev Avatar"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <span className="text-sm ml-2 text-gray-400">
-                    MinecraftBot
-                  </span>
-                </div>
               </div>
 
-              {/* Video Card 5 */}
-              <div className="flex-shrink-0 w-[350px]">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border">
-                  <div className="relative">
-                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21]">
+              {/* Video Card 5 - UPDATED */}
+              <div className="flex-shrink-0 video-card">
+                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                  <div className="relative flex-grow">
+                    <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('https://i.imgur.com/Dk2QVbS.jpg')] bg-cover bg-center"></div>
                       <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
-                          <svg
-                            className="w-8 h-8"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
-                              fill="white"
-                              stroke="white"
-                            />
-                          </svg>
-                        </div>
+
+                      {/* Absolutely centered play button */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                        <svg
+                          className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M9.5 7.5L16.5 12L9.5 16.5V7.5Z"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
                       </div>
+
                       <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
                         1:05
                       </div>
@@ -544,7 +509,9 @@ const MinecraftBotLanding = () => {
                       Redstone
                     </div>
                   </div>
-                  <div className="p-4">
+
+                  {/* Content positioned at the bottom */}
+                  <div className="p-4 mt-auto">
                     <h3 className="text-lg font-bold text-[#5D7C15]">
                       Redstone Contraption Builder
                     </h3>
@@ -552,18 +519,6 @@ const MinecraftBotLanding = () => {
                       Constructing complex redstone mechanisms automatically
                     </p>
                   </div>
-                </div>
-                <div className="flex items-center mt-3">
-                  <div className="w-8 h-8 rounded-full overflow-hidden pixel-border">
-                    <img
-                      src="https://i.imgur.com/J7RfQlI.png"
-                      alt="Dev Avatar"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <span className="text-sm ml-2 text-gray-400">
-                    MinecraftBot
-                  </span>
                 </div>
               </div>
             </div>
