@@ -215,7 +215,7 @@ bot.command("follow player steve distance=5")`}
               </pre>
             </div>
             <div className="mt-4 flex justify-between items-center">
-              <p className="text-gray-400 text-sm">Simple text commands control the bot's neural network</p>
+              <p className="text-gray-400 text-sm">Simple text commands control the bot&apos;s neural network</p>
               <a href="#" className="text-[#5D7C15] hover:text-[#7DAF2B] transition text-sm">View full documentation →</a>
             </div>
           </div>
@@ -363,7 +363,7 @@ bot.command("follow player steve distance=5")`}
                       <span key={i} className="text-[#E7A83B]">★</span>
                     ))}
                   </div>
-                  <p className="text-gray-300">"This bot built a better house in 5 minutes than I could in an hour. The mining optimization is insane!"</p>
+                  <p className="text-gray-300">&quot;This bot built a better house in 5 minutes than I could in an hour. The mining optimization is insane!&quot;</p>
                 </div>
               </div>
             </div>
@@ -385,7 +385,7 @@ bot.command("follow player steve distance=5")`}
                     ))}
                     <span className="text-gray-500">★</span>
                   </div>
-                  <p className="text-gray-300">"Been testing the combat system - it can handle multiple creepers better than most players. Really impressive AI!"</p>
+                  <p className="text-gray-300">&quot;Been testing the combat system - it can handle multiple creepers better than most players. Really impressive AI!&quot;</p>
                 </div>
               </div>
             </div>
