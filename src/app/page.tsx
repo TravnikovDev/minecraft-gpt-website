@@ -15,10 +15,6 @@ const MinecraftBotLanding = () => {
           name="description"
           content="An advanced open-source Minecraft bot powered by neural networks"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
-          rel="stylesheet"
-        />
         <style>{`
           .font-minecraft {
             font-family: 'VT323', monospace;
@@ -572,14 +568,14 @@ const MinecraftBotLanding = () => {
                 </li>
                 <li>
                   <strong className="text-[#E7A83B]">Custom Commands:</strong>{" "}
-                  The bot's capabilities can easily be extended with custom
+                  The bot&apos;s capabilities can easily be extended with custom
                   commands.
                 </li>
                 <li>
                   <strong className="text-[#E7A83B]">
                     Intelligent Conversations:
                   </strong>{" "}
-                  Powered by OpenAI's ChatGPT, the bot can engage in meaningful
+                  Powered by OpenAI&apos;s ChatGPT, the bot can engage in meaningful
                   conversations with players.
                 </li>
                 <li>
@@ -626,9 +622,9 @@ const MinecraftBotLanding = () => {
 
               <div className="bg-[#1D1F21] p-4 rounded-lg border-l-4 border-[#E7A83B] mt-6">
                 <p className="italic text-gray-300">
-                  "The author (Roman Travnikov) is not an experienced Minecraft
+                  &quot;The author (Roman Travnikov) is not an experienced Minecraft
                   player, thus the bot is designed to behave like a beginner
-                  exploring the Minecraft world."
+                  exploring the Minecraft world.&quot;
                 </p>
               </div>
             </div>
@@ -813,8 +809,8 @@ const MinecraftBotLanding = () => {
                     ))}
                   </div>
                   <p className="text-gray-300">
-                    "This bot built a better house in 5 minutes than I could in
-                    an hour. The mining optimization is insane!"
+                    &quot;This bot built a better house in 5 minutes than I could in
+                    an hour. The mining optimization is insane!&quot;
                   </p>
                 </div>
               </div>
@@ -842,8 +838,8 @@ const MinecraftBotLanding = () => {
                     <span className="text-gray-500">★</span>
                   </div>
                   <p className="text-gray-300">
-                    "Been testing the combat system - it can handle multiple
-                    creepers better than most players. Really impressive AI!"
+                    &quot;Been testing the combat system - it can handle multiple
+                    creepers better than most players. Really impressive AI!&quot;
                   </p>
                 </div>
               </div>
