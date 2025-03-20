@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
 :root {
+  /* Authentic Minecraft colors */
+  --minecraft-grass: #5D7C15;
+  --minecraft-dirt: #866043;
+  --minecraft-stone: #828282;
+  --minecraft-wood: #6E5031;
+  --minecraft-gold: #E7A83B;
+  --minecraft-redstone: #993333;
+  --minecraft-water: #3BABE7;
+  --minecraft-dark-gray: #1D1F21;
+  --minecraft-darker-gray: #0A0A0A;
+  --minecraft-medium-gray: #2F2F2F;
+  
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -14,7 +26,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: var(--minecraft-dark-gray);
     --foreground: #ededed;
   }
 }
@@ -22,5 +34,68 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'VT323', monospace, Arial, Helvetica, sans-serif;
+}
+
+/* Minecraft-style button */
+.minecraft-button {
+  position: relative;
+  transition: all 0.1s;
+  box-shadow: inset -2px -4px 0 0 rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+.minecraft-button:active {
+  top: 2px;
+  box-shadow: inset -1px -2px 0 0 rgba(0,0,0,0.6);
+}
+
+/* Minecraft-style pixelated border */
+.pixel-border {
+  image-rendering: pixelated;
+  box-shadow: 0 0 0 2px #000000,
+              inset 0 0 0 2px #000000;
+}
+
+/* Pixelated images */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* For tooltip bubbles */
+.minecraft-tooltip {
+  background-color: rgba(0,0,0,0.8);
+  border: 2px solid #2F2F2F;
+  color: white;
+}
+
+/* Progress animation for loading */
+@keyframes minecraft-loading {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.minecraft-progress {
+  animation: minecraft-loading 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar for code blocks */
+.minecraft-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.minecraft-scrollbar::-webkit-scrollbar-track {
+  background: var(--minecraft-dark-gray);
+}
+
+.minecraft-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--minecraft-stone);
+  border: 2px solid var(--minecraft-dark-gray);
+}
+
+.minecraft-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--minecraft-grass);
 }
