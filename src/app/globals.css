@@ -2,17 +2,17 @@
 
 :root {
   /* Authentic Minecraft colors */
-  --minecraft-grass: #5D7C15;
+  --minecraft-grass: #5d7c15;
   --minecraft-dirt: #866043;
   --minecraft-stone: #828282;
-  --minecraft-wood: #6E5031;
-  --minecraft-gold: #E7A83B;
+  --minecraft-wood: #6e5031;
+  --minecraft-gold: #e7a83b;
   --minecraft-redstone: #993333;
-  --minecraft-water: #3BABE7;
-  --minecraft-dark-gray: #1D1F21;
-  --minecraft-darker-gray: #0A0A0A;
-  --minecraft-medium-gray: #2F2F2F;
-  
+  --minecraft-water: #3babe7;
+  --minecraft-dark-gray: #1d1f21;
+  --minecraft-darker-gray: #0a0a0a;
+  --minecraft-medium-gray: #2f2f2f;
+
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -34,27 +34,26 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'VT323', monospace, Arial, Helvetica, sans-serif;
+  font-family: "VT323", monospace, Arial, Helvetica, sans-serif;
 }
 
 /* Minecraft-style button */
 .minecraft-button {
   position: relative;
   transition: all 0.1s;
-  box-shadow: inset -2px -4px 0 0 rgba(0,0,0,0.6);
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+  box-shadow: inset -2px -4px 0 0 rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 .minecraft-button:active {
   top: 2px;
-  box-shadow: inset -1px -2px 0 0 rgba(0,0,0,0.6);
+  box-shadow: inset -1px -2px 0 0 rgba(0, 0, 0, 0.6);
 }
 
 /* Minecraft-style pixelated border */
 .pixel-border {
   image-rendering: pixelated;
-  box-shadow: 0 0 0 2px #000000,
-              inset 0 0 0 2px #000000;
+  box-shadow: 0 0 0 2px #000000, inset 0 0 0 2px #000000;
 }
 
 /* Pixelated images */
@@ -66,15 +65,19 @@ body {
 
 /* For tooltip bubbles */
 .minecraft-tooltip {
-  background-color: rgba(0,0,0,0.8);
-  border: 2px solid #2F2F2F;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #2f2f2f;
   color: white;
 }
 
 /* Progress animation for loading */
 @keyframes minecraft-loading {
-  0% { width: 0%; }
-  100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .minecraft-progress {
@@ -98,4 +101,55 @@ body {
 
 .minecraft-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--minecraft-grass);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Responsive video cards */
+.video-card {
+  width: 350px;
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .video-card {
+    width: 300px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .video-card {
+    width: 180px;
+  }
+}
+
+/* Vertical video card styling for YouTube Shorts format */
+.video-card {
+  width: 220px; /* Narrower to accommodate vertical format */
+}
+
+.aspect-w-9 {
+  position: relative;
+  padding-bottom: 177.78%; /* 16:9 inverted for vertical video = 9:16 = ~177.78% */
+  height: 0;
+}
+
+.aspect-w-9 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
