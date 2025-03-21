@@ -718,7 +718,7 @@ const MinecraftBotLanding = () => {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-40 h-40 rounded-lg overflow-hidden flex-shrink-0 pixel-border">
                 <img
-                  src="/images/developer-avatar.png"
+                  src="https://github.com/TRAVNIKOVdev.png"
                   alt="Roman Travnikov"
                   className="w-full h-full object-cover"
                 />
@@ -791,11 +791,9 @@ const MinecraftBotLanding = () => {
             <div className="bg-[#232B2B] rounded p-6 pixel-border">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded overflow-hidden flex-shrink-0 pixel-border">
-                  <img
-                    src="/images/steve-avatar.png"
-                    alt="Steve Avatar"
-                    className="w-full h-full object-cover pixelated"
-                  />
+                  <span role="img" aria-label="person" className="text-3xl">
+                    👤
+                  </span>
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-[#5D7C15]">
@@ -819,11 +817,9 @@ const MinecraftBotLanding = () => {
             <div className="bg-[#232B2B] rounded p-6 pixel-border">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded overflow-hidden flex-shrink-0 pixel-border">
-                  <img
-                    src="/images/alex-avatar.png"
-                    alt="Alex Avatar"
-                    className="w-full h-full object-cover pixelated"
-                  />
+                  <span role="img" aria-label="person" className="text-3xl">
+                    👤
+                  </span>
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-[#5D7C15]">
