@@ -718,7 +718,7 @@ const MinecraftBotLanding = () => {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-40 h-40 rounded-lg overflow-hidden flex-shrink-0 pixel-border">
                 <img
-                  src="https://avatars.githubusercontent.com/u/12345678?v=4"
+                  src="https://github.com/TRAVNIKOVdev.png"
                   alt="Roman Travnikov"
                   className="w-full h-full object-cover"
                 />
