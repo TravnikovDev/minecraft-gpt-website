@@ -297,10 +297,10 @@ const MinecraftBotLanding = () => {
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video1.jpg')] bg-cover bg-center"></div>
-                      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                      <div className="absolute inset-0 bg-black/30"></div>
 
                       {/* Absolutely centered play button */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black/60 flex items-center justify-center">
                         <svg
                           className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                           viewBox="0 0 24 24"
@@ -314,7 +314,7 @@ const MinecraftBotLanding = () => {
                         </svg>
                       </div>
 
-                      <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                      <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
                         0:42
                       </div>
                     </div>
@@ -343,10 +343,10 @@ const MinecraftBotLanding = () => {
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video2.jpg')] bg-cover bg-center"></div>
-                      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                      <div className="absolute inset-0 bg-black/30"></div>
 
                       {/* Absolutely centered play button */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black/60 flex items-center justify-center">
                         <svg
                           className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                           viewBox="0 0 24 24"
@@ -360,7 +360,7 @@ const MinecraftBotLanding = () => {
                         </svg>
                       </div>
 
-                      <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                      <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
                         0:57
                       </div>
                     </div>
@@ -389,10 +389,10 @@ const MinecraftBotLanding = () => {
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video3.jpg')] bg-cover bg-center"></div>
-                      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                      <div className="absolute inset-0 bg-black/30"></div>
 
                       {/* Absolutely centered play button */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black/60 flex items-center justify-center">
                         <svg
                           className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                           viewBox="0 0 24 24"
@@ -406,7 +406,7 @@ const MinecraftBotLanding = () => {
                         </svg>
                       </div>
 
-                      <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                      <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
                         1:24
                       </div>
                     </div>
@@ -434,10 +434,10 @@ const MinecraftBotLanding = () => {
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video4.jpg')] bg-cover bg-center"></div>
-                      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                      <div className="absolute inset-0 bg-black/30"></div>
 
                       {/* Absolutely centered play button */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black/60 flex items-center justify-center">
                         <svg
                           className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                           viewBox="0 0 24 24"
@@ -451,7 +451,7 @@ const MinecraftBotLanding = () => {
                         </svg>
                       </div>
 
-                      <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                      <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
                         0:38
                       </div>
                     </div>
@@ -479,10 +479,10 @@ const MinecraftBotLanding = () => {
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video5.jpg')] bg-cover bg-center"></div>
-                      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                      <div className="absolute inset-0 bg-black/30"></div>
 
                       {/* Absolutely centered play button */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black bg-opacity-60 flex items-center justify-center">
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-black/60 flex items-center justify-center">
                         <svg
                           className="w-8 h-8 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                           viewBox="0 0 24 24"
@@ -496,7 +496,7 @@ const MinecraftBotLanding = () => {
                         </svg>
                       </div>
 
-                      <div className="absolute bottom-2 right-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                      <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
                         1:05
                       </div>
                     </div>
