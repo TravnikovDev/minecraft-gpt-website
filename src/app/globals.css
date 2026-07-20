@@ -20,8 +20,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,10 +29,26 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "VT323", monospace, Arial, Helvetica, sans-serif;
+  font-family: var(--font-vt323), "VT323", monospace;
+  letter-spacing: 0.5px;
+}
+
+.font-minecraft {
+  font-family: var(--font-vt323), "VT323", monospace;
+  letter-spacing: 0.5px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--minecraft-gold);
+  outline-offset: 2px;
 }
 
 /* Minecraft-style button */
@@ -42,7 +56,7 @@ body {
   position: relative;
   transition: all 0.1s;
   box-shadow: inset -2px -4px 0 0 rgba(0, 0, 0, 0.6);
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 .minecraft-button:active {
@@ -68,6 +82,22 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   border: 2px solid #2f2f2f;
   color: white;
+}
+
+/* Blinking cursor for the fake chat input */
+@keyframes chat-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.chat-cursor {
+  animation: chat-blink 1.1s steps(1) infinite;
 }
 
 /* Progress animation for loading */
@@ -114,28 +144,15 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-/* Responsive video cards */
+/* Vertical (9:16, Shorts-format) video cards */
 .video-card {
-  width: 350px;
+  width: 220px;
 }
 
-/* Tablet adjustments */
-@media (max-width: 768px) {
-  .video-card {
-    width: 300px;
-  }
-}
-
-/* Mobile adjustments */
 @media (max-width: 480px) {
   .video-card {
     width: 180px;
   }
-}
-
-/* Vertical video card styling for YouTube Shorts format */
-.video-card {
-  width: 220px; /* Narrower to accommodate vertical format */
 }
 
 .aspect-w-9 {
@@ -154,17 +171,3 @@ body {
   bottom: 0;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* Pixel border style */
-.pixel-border {
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
-}

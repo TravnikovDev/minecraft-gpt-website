@@ -1,69 +1,62 @@
 "use client";
-import React from "react";
-import { Helmet } from "react-helmet";
-import { FaGithub, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
-import { RiSwordFill } from "react-icons/ri";
+import React, { useState } from "react";
+import { FaGithub, FaInstagram, FaYoutube, FaTiktok, FaBars, FaTimes } from "react-icons/fa";
+import { RiSwordFill, RiRobot2Fill } from "react-icons/ri";
 import { GiMineralPearls, GiWoodCabin } from "react-icons/gi";
+
+const navLinks = [
+  { href: "#features", label: "Features" },
+  { href: "#videos", label: "Videos" },
+  { href: "#about", label: "About" },
+  { href: "https://github.com/TravnikovDev/minecraft-gpt", label: "GitHub" },
+];
 
 // The main landing page component
 const MinecraftBotLanding = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#1D1F21] text-white font-minecraft">
-      <Helmet>
-        <title>MinecraftBot - AI Neural Automation</title>
-        <meta
-          name="description"
-          content="An advanced open-source Minecraft bot powered by neural networks"
-        />
-        <style>{`
-          .font-minecraft {
-            font-family: 'VT323', monospace;
-            letter-spacing: 0.5px;
-          }
-          .pixelated {
-            image-rendering: pixelated;
-          }
-          .minecraft-button {
-            position: relative;
-            transition: all 0.1s;
-            box-shadow: inset -2px -4px 0 0 rgba(0,0,0,0.6);
-          }
-          .minecraft-button:active {
-            top: 2px;
-            box-shadow: inset -1px -2px 0 0 rgba(0,0,0,0.6);
-          }
-          .pixel-border {
-            box-shadow: 0 0 0 2px #000,
-                       inset 0 0 0 2px #000;
-            image-rendering: pixelated;
-          }
-        `}</style>
-      </Helmet>
-
       {/* Navigation */}
       <nav className="bg-[#232B2B] px-6 py-4 border-b-2 border-[#5D7C15]">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-[#5D7C15]">
+          <div className="text-2xl font-bold text-[#7DAF2B]">
             Minecraft<span className="text-[#E7A83B]">-GPT</span>
           </div>
           <div className="hidden md:flex space-x-6">
-            <a href="#features" className="hover:text-[#5D7C15] transition">
-              Features
-            </a>
-            <a href="#videos" className="hover:text-[#5D7C15] transition">
-              Videos
-            </a>
-            <a href="#about" className="hover:text-[#5D7C15] transition">
-              About
-            </a>
-            <a
-              href="https://github.com/your-username/minecraft-bot"
-              className="hover:text-[#5D7C15] transition"
-            >
-              GitHub
-            </a>
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="hover:text-[#7DAF2B] transition"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
+          <button
+            className="md:hidden p-2 text-[#E7A83B]"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
         </div>
+        {menuOpen && (
+          <div className="md:hidden mt-4 pb-2 flex flex-col space-y-3 border-t-2 border-[#2F2F2F] pt-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="hover:text-[#7DAF2B] transition text-lg"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -72,31 +65,32 @@ const MinecraftBotLanding = () => {
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('/images/dirt-bg.png')] bg-repeat"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#5D7C15]">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#7DAF2B]">
             <span className="block">The Future of</span>
             <span className="text-[#E7A83B]">Minecraft Automation</span>
           </h1>
 
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-6 max-w-3xl mx-auto">
             An advanced open-source Minecraft bot powered by GPT that accepts
             commands through chat and implements them in-game.
-            <span className="block mt-4 text-[#E7A83B] font-semibold">
-              Coming Soon
-            </span>
           </p>
+
+          <span className="inline-block mb-8 px-4 py-1 text-lg font-semibold text-[#1D1F21] bg-[#E7A83B] pixel-border">
+            Coming Soon
+          </span>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <a
               href="https://github.com/TravnikovDev/minecraft-gpt"
               target="_blank"
               rel="noopener noreferrer"
-              className="minecraft-button bg-[#4C4C4C] hover:bg-[#5D7C15] text-white py-3 px-8 rounded font-medium flex items-center gap-2 border-t-2 border-l-2 border-[#828282] border-b-2 border-r-2 border-[#2F2F2F] transition"
+              className="minecraft-button bg-[#4C4C4C] hover:bg-[#5D7C15] text-white py-3 px-8 font-medium flex items-center gap-2 border-t-2 border-l-2 border-[#828282] border-b-2 border-r-2 border-[#2F2F2F] transition"
             >
               <FaGithub size={24} /> GitHub Repository
             </a>
           </div>
 
-          <div className="bg-[#4C4C4C] p-6 rounded pixel-border max-w-md mx-auto border-2 border-[#828282]">
+          <div className="bg-[#4C4C4C] p-6 pixel-border max-w-md mx-auto border-2 border-[#828282]">
             <h2 className="text-xl font-bold mb-4 text-[#E7A83B]">
               Stay Connected
             </h2>
@@ -108,6 +102,7 @@ const MinecraftBotLanding = () => {
                 href="https://youtube.com/@minecraft-gpt"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="YouTube"
                 className="text-[#B93333] hover:text-[#FF0000] transition"
               >
                 <FaYoutube size={32} />
@@ -116,6 +111,7 @@ const MinecraftBotLanding = () => {
                 href="https://tiktok.com/@minecraft-gpt"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="TikTok"
                 className="text-[#3BABE7] hover:text-[#69C9FF] transition"
               >
                 <FaTiktok size={28} />
@@ -124,6 +120,7 @@ const MinecraftBotLanding = () => {
                 href="https://instagram.com/minecraft-gpt"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="text-[#C13584] hover:text-[#E1306C] transition"
               >
                 <FaInstagram size={32} />
@@ -132,6 +129,7 @@ const MinecraftBotLanding = () => {
                 href="https://twitter.com/minecraft_gpt"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="X (Twitter)"
                 className="text-[#1DA1F2] hover:text-[#4EBEFC] transition"
               >
                 <svg
@@ -166,14 +164,42 @@ const MinecraftBotLanding = () => {
             {/* Right shadow gradient */}
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#2F2F2F] to-transparent z-10 pointer-events-none"></div>
 
-            <div className="flex overflow-x-auto pb-8 hide-scrollbar space-x-6">
+            <button
+              type="button"
+              aria-label="Scroll capabilities left"
+              onClick={() =>
+                document
+                  .getElementById("features-rail")
+                  ?.scrollBy({ left: -320 })
+              }
+              className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 items-center justify-center bg-[#4C4C4C] hover:bg-[#5D7C15] text-white text-2xl pixel-border transition"
+            >
+              &lsaquo;
+            </button>
+            <button
+              type="button"
+              aria-label="Scroll capabilities right"
+              onClick={() =>
+                document
+                  .getElementById("features-rail")
+                  ?.scrollBy({ left: 320 })
+              }
+              className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 items-center justify-center bg-[#4C4C4C] hover:bg-[#5D7C15] text-white text-2xl pixel-border transition"
+            >
+              &rsaquo;
+            </button>
+
+            <div
+              id="features-rail"
+              className="flex overflow-x-auto pb-8 hide-scrollbar space-x-6"
+            >
               {/* Feature 1 */}
               <div className="flex-shrink-0 w-[300px]">
-                <div className="bg-[#232B2B] rounded p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
-                  <div className="bg-[#5D7C15] w-16 h-16 rounded-lg flex items-center justify-center mb-4 mx-auto pixel-border">
+                <div className="bg-[#232B2B] p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
+                  <div className="bg-[#5D7C15] w-16 h-16 flex items-center justify-center mb-4 mx-auto pixel-border">
                     <GiWoodCabin size={36} className="text-[#E7A83B]" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-center text-[#5D7C15]">
+                  <h3 className="text-xl font-bold mb-3 text-center text-[#7DAF2B]">
                     Automated Building
                   </h3>
                   <p className="text-gray-300 text-center">
@@ -185,11 +211,11 @@ const MinecraftBotLanding = () => {
 
               {/* Feature 2 */}
               <div className="flex-shrink-0 w-[300px]">
-                <div className="bg-[#232B2B] rounded p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
-                  <div className="bg-[#5D7C15] w-16 h-16 rounded-lg flex items-center justify-center mb-4 mx-auto pixel-border">
+                <div className="bg-[#232B2B] p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
+                  <div className="bg-[#5D7C15] w-16 h-16 flex items-center justify-center mb-4 mx-auto pixel-border">
                     <GiMineralPearls size={36} className="text-[#3BABE7]" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-center text-[#5D7C15]">
+                  <h3 className="text-xl font-bold mb-3 text-center text-[#7DAF2B]">
                     Intelligent Mining
                   </h3>
                   <p className="text-gray-300 text-center">
@@ -201,11 +227,11 @@ const MinecraftBotLanding = () => {
 
               {/* Feature 3 */}
               <div className="flex-shrink-0 w-[300px]">
-                <div className="bg-[#232B2B] rounded p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
-                  <div className="bg-[#5D7C15] w-16 h-16 rounded-lg flex items-center justify-center mb-4 mx-auto pixel-border">
+                <div className="bg-[#232B2B] p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
+                  <div className="bg-[#5D7C15] w-16 h-16 flex items-center justify-center mb-4 mx-auto pixel-border">
                     <RiSwordFill size={36} className="text-[#B93333]" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-center text-[#5D7C15]">
+                  <h3 className="text-xl font-bold mb-3 text-center text-[#7DAF2B]">
                     Combat Assistant
                   </h3>
                   <p className="text-gray-300 text-center">
@@ -217,8 +243,8 @@ const MinecraftBotLanding = () => {
 
               {/* Feature 4 */}
               <div className="flex-shrink-0 w-[300px]">
-                <div className="bg-[#232B2B] rounded p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
-                  <div className="bg-[#5D7C15] w-16 h-16 rounded-lg flex items-center justify-center mb-4 mx-auto pixel-border">
+                <div className="bg-[#232B2B] p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
+                  <div className="bg-[#5D7C15] w-16 h-16 flex items-center justify-center mb-4 mx-auto pixel-border">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="36"
@@ -231,7 +257,7 @@ const MinecraftBotLanding = () => {
                       <path d="M12 2v8m0 0v6m0-6h9m-18 0h9"></path>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-center text-[#5D7C15]">
+                  <h3 className="text-xl font-bold mb-3 text-center text-[#7DAF2B]">
                     Natural Language Commands
                   </h3>
                   <p className="text-gray-300 text-center">
@@ -243,8 +269,8 @@ const MinecraftBotLanding = () => {
 
               {/* Feature 5 */}
               <div className="flex-shrink-0 w-[300px]">
-                <div className="bg-[#232B2B] rounded p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
-                  <div className="bg-[#5D7C15] w-16 h-16 rounded-lg flex items-center justify-center mb-4 mx-auto pixel-border">
+                <div className="bg-[#232B2B] p-6 pixel-border transform hover:-translate-y-2 transition duration-300 h-full">
+                  <div className="bg-[#5D7C15] w-16 h-16 flex items-center justify-center mb-4 mx-auto pixel-border">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="36"
@@ -257,7 +283,7 @@ const MinecraftBotLanding = () => {
                       <path d="M2 12h20M2 12a10 10 0 0 1 20 0M2 12a10 10 0 0 0 20 0M4 12a8 8 0 0 1 16 0M4 12a8 8 0 0 0 16 0M6 12a6 6 0 0 1 12 0M6 12a6 6 0 0 0 12 0"></path>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-center text-[#5D7C15]">
+                  <h3 className="text-xl font-bold mb-3 text-center text-[#7DAF2B]">
                     Adaptive Learning
                   </h3>
                   <p className="text-gray-300 text-center">
@@ -290,10 +316,38 @@ const MinecraftBotLanding = () => {
             {/* Right shadow gradient */}
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#1D1F21] to-transparent z-10 pointer-events-none"></div>
 
-            <div className="flex overflow-x-auto pb-8 hide-scrollbar space-x-6">
+            <button
+              type="button"
+              aria-label="Scroll videos left"
+              onClick={() =>
+                document
+                  .getElementById("videos-rail")
+                  ?.scrollBy({ left: -320 })
+              }
+              className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 items-center justify-center bg-[#4C4C4C] hover:bg-[#5D7C15] text-white text-2xl pixel-border transition"
+            >
+              &lsaquo;
+            </button>
+            <button
+              type="button"
+              aria-label="Scroll videos right"
+              onClick={() =>
+                document
+                  .getElementById("videos-rail")
+                  ?.scrollBy({ left: 320 })
+              }
+              className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 items-center justify-center bg-[#4C4C4C] hover:bg-[#5D7C15] text-white text-2xl pixel-border transition"
+            >
+              &rsaquo;
+            </button>
+
+            <div
+              id="videos-rail"
+              className="flex overflow-x-auto pb-8 hide-scrollbar space-x-6"
+            >
               {/* Video Card 1 - UPDATED */}
               <div className="flex-shrink-0 video-card">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                <div className="bg-[#232B2B] overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video1.jpg')] bg-cover bg-center"></div>
@@ -318,7 +372,7 @@ const MinecraftBotLanding = () => {
                         0:42
                       </div>
                     </div>
-                    <div className="absolute top-2 left-2 bg-[#5D7C15] text-white text-xs px-2 py-1 rounded pixel-border">
+                    <div className="absolute top-2 left-2 bg-[#5D7C15] text-white text-xs px-2 py-1 pixel-border">
                       <span className="inline-block w-2 h-2 bg-white rounded-full mr-1"></span>{" "}
                       Building
                     </div>
@@ -326,7 +380,7 @@ const MinecraftBotLanding = () => {
 
                   {/* Content positioned at the bottom */}
                   <div className="p-4 mt-auto">
-                    <h3 className="text-lg font-bold text-[#5D7C15]">
+                    <h3 className="text-lg font-bold text-[#7DAF2B]">
                       Automated House Construction
                     </h3>
                     <p className="text-sm text-gray-300 mt-1">
@@ -339,7 +393,7 @@ const MinecraftBotLanding = () => {
 
               {/* Video Card 2 - UPDATED */}
               <div className="flex-shrink-0 video-card">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                <div className="bg-[#232B2B] overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video2.jpg')] bg-cover bg-center"></div>
@@ -364,15 +418,15 @@ const MinecraftBotLanding = () => {
                         0:57
                       </div>
                     </div>
-                    <div className="absolute top-2 left-2 bg-[#3BABE7] text-white text-xs px-2 py-1 rounded pixel-border">
-                      <span className="inline-block w-2 h-2 bg-white rounded-full mr-1"></span>{" "}
+                    <div className="absolute top-2 left-2 bg-[#3BABE7] text-[#1D1F21] text-xs px-2 py-1 pixel-border">
+                      <span className="inline-block w-2 h-2 bg-[#1D1F21] rounded-full mr-1"></span>{" "}
                       Mining
                     </div>
                   </div>
 
                   {/* Content positioned at the bottom */}
                   <div className="p-4 mt-auto">
-                    <h3 className="text-lg font-bold text-[#5D7C15]">
+                    <h3 className="text-lg font-bold text-[#7DAF2B]">
                       Diamond Mining Expedition
                     </h3>
                     <p className="text-sm text-gray-300 mt-1">
@@ -385,7 +439,7 @@ const MinecraftBotLanding = () => {
 
               {/* Video Card 3 - UPDATED */}
               <div className="flex-shrink-0 video-card">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                <div className="bg-[#232B2B] overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video3.jpg')] bg-cover bg-center"></div>
@@ -410,7 +464,7 @@ const MinecraftBotLanding = () => {
                         1:24
                       </div>
                     </div>
-                    <div className="absolute top-2 left-2 bg-[#993333] text-white text-xs px-2 py-1 rounded pixel-border">
+                    <div className="absolute top-2 left-2 bg-[#993333] text-white text-xs px-2 py-1 pixel-border">
                       <span className="inline-block w-2 h-2 bg-white rounded-full mr-1"></span>{" "}
                       Combat
                     </div>
@@ -418,7 +472,7 @@ const MinecraftBotLanding = () => {
 
                   {/* Content positioned at the bottom */}
                   <div className="p-4 mt-auto">
-                    <h3 className="text-lg font-bold text-[#5D7C15]">
+                    <h3 className="text-lg font-bold text-[#7DAF2B]">
                       Creeper Defense System
                     </h3>
                     <p className="text-sm text-gray-300 mt-1">
@@ -430,7 +484,7 @@ const MinecraftBotLanding = () => {
 
               {/* Video Card 4 - UPDATED */}
               <div className="flex-shrink-0 video-card">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                <div className="bg-[#232B2B] overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video4.jpg')] bg-cover bg-center"></div>
@@ -455,15 +509,15 @@ const MinecraftBotLanding = () => {
                         0:38
                       </div>
                     </div>
-                    <div className="absolute top-2 left-2 bg-[#E7A83B] text-white text-xs px-2 py-1 rounded pixel-border">
-                      <span className="inline-block w-2 h-2 bg-white rounded-full mr-1"></span>{" "}
+                    <div className="absolute top-2 left-2 bg-[#E7A83B] text-[#1D1F21] text-xs px-2 py-1 pixel-border">
+                      <span className="inline-block w-2 h-2 bg-[#1D1F21] rounded-full mr-1"></span>{" "}
                       Farming
                     </div>
                   </div>
 
                   {/* Content positioned at the bottom */}
                   <div className="p-4 mt-auto">
-                    <h3 className="text-lg font-bold text-[#5D7C15]">
+                    <h3 className="text-lg font-bold text-[#7DAF2B]">
                       Automated Crop Farming
                     </h3>
                     <p className="text-sm text-gray-300 mt-1">
@@ -475,7 +529,7 @@ const MinecraftBotLanding = () => {
 
               {/* Video Card 5 - UPDATED */}
               <div className="flex-shrink-0 video-card">
-                <div className="bg-[#232B2B] rounded-lg overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
+                <div className="bg-[#232B2B] overflow-hidden pixel-border aspect-9/18 flex flex-col h-full">
                   <div className="relative flex-grow">
                     <div className="aspect-w-16 aspect-h-9 overflow-hidden bg-[#1D1F21] h-full">
                       <div className="absolute inset-0 bg-[url('/images/video5.jpg')] bg-cover bg-center"></div>
@@ -500,7 +554,7 @@ const MinecraftBotLanding = () => {
                         1:05
                       </div>
                     </div>
-                    <div className="absolute top-2 left-2 bg-[#5D7C15] text-white text-xs px-2 py-1 rounded pixel-border">
+                    <div className="absolute top-2 left-2 bg-[#5D7C15] text-white text-xs px-2 py-1 pixel-border">
                       <span className="inline-block w-2 h-2 bg-white rounded-full mr-1"></span>{" "}
                       Redstone
                     </div>
@@ -508,7 +562,7 @@ const MinecraftBotLanding = () => {
 
                   {/* Content positioned at the bottom */}
                   <div className="p-4 mt-auto">
-                    <h3 className="text-lg font-bold text-[#5D7C15]">
+                    <h3 className="text-lg font-bold text-[#7DAF2B]">
                       Redstone Contraption Builder
                     </h3>
                     <p className="text-sm text-gray-300 mt-1">
@@ -523,8 +577,10 @@ const MinecraftBotLanding = () => {
           {/* View all button */}
           <div className="text-center mt-8">
             <a
-              href="#"
-              className="minecraft-button inline-block bg-[#4C4C4C] hover:bg-[#5D7C15] text-white py-2 px-6 rounded font-medium transition"
+              href="https://youtube.com/@minecraft-gpt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="minecraft-button inline-block bg-[#4C4C4C] hover:bg-[#5D7C15] text-white py-2 px-6 font-medium transition"
             >
               View All Videos
             </a>
@@ -539,7 +595,7 @@ const MinecraftBotLanding = () => {
             About The Project
           </h2>
 
-          <div className="bg-[#232B2B] rounded p-6 pixel-border overflow-hidden">
+          <div className="bg-[#232B2B] p-6 pixel-border overflow-hidden">
             <div className="prose prose-invert max-w-none">
               <p className="text-lg mb-6">
                 Minecraft-GPT is an intelligent Minecraft bot designed to
@@ -549,7 +605,7 @@ const MinecraftBotLanding = () => {
                 interacting with both the environment and other players.
               </p>
 
-              <h3 className="text-xl font-bold text-[#5D7C15] mt-8 mb-4">
+              <h3 className="text-xl font-bold text-[#7DAF2B] mt-8 mb-4">
                 Features
               </h3>
               <ul className="space-y-2 text-gray-300 list-disc pl-6 mb-6">
@@ -594,33 +650,33 @@ const MinecraftBotLanding = () => {
                 </li>
               </ul>
 
-              <h3 className="text-xl font-bold text-[#5D7C15] mt-8 mb-4">
+              <h3 className="text-xl font-bold text-[#7DAF2B] mt-8 mb-4">
                 Technology Stack
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div className="bg-[#1D1F21] p-4 rounded pixel-border text-center">
-                  <div className="text-[#5D7C15] font-bold mb-1">
+                <div className="bg-[#1D1F21] p-4 pixel-border text-center">
+                  <div className="text-[#7DAF2B] font-bold mb-1">
                     TypeScript
                   </div>
                   <div className="text-xs text-gray-400">Language</div>
                 </div>
-                <div className="bg-[#1D1F21] p-4 rounded pixel-border text-center">
-                  <div className="text-[#5D7C15] font-bold mb-1">Bun.js</div>
+                <div className="bg-[#1D1F21] p-4 pixel-border text-center">
+                  <div className="text-[#7DAF2B] font-bold mb-1">Bun.js</div>
                   <div className="text-xs text-gray-400">Runtime</div>
                 </div>
-                <div className="bg-[#1D1F21] p-4 rounded pixel-border text-center">
-                  <div className="text-[#5D7C15] font-bold mb-1">
+                <div className="bg-[#1D1F21] p-4 pixel-border text-center">
+                  <div className="text-[#7DAF2B] font-bold mb-1">
                     Mineflayer
                   </div>
                   <div className="text-xs text-gray-400">Bot Framework</div>
                 </div>
-                <div className="bg-[#1D1F21] p-4 rounded pixel-border text-center">
-                  <div className="text-[#5D7C15] font-bold mb-1">OpenAI</div>
+                <div className="bg-[#1D1F21] p-4 pixel-border text-center">
+                  <div className="text-[#7DAF2B] font-bold mb-1">OpenAI</div>
                   <div className="text-xs text-gray-400">AI Integration</div>
                 </div>
               </div>
 
-              <div className="bg-[#1D1F21] p-4 rounded-lg border-l-4 border-[#E7A83B] mt-6">
+              <div className="bg-[#1D1F21] p-4 border-l-4 border-[#E7A83B] mt-6">
                 <p className="italic text-gray-300">
                   &quot;The author (Roman Travnikov) is not an experienced Minecraft
                   player, thus the bot is designed to behave like a beginner
@@ -634,7 +690,7 @@ const MinecraftBotLanding = () => {
                 href="https://github.com/TravnikovDev/minecraft-gpt"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="minecraft-button inline-block bg-[#4C4C4C] hover:bg-[#5D7C15] text-white py-2 px-6 rounded font-medium transition"
+                className="minecraft-button inline-block bg-[#4C4C4C] hover:bg-[#5D7C15] text-white py-2 px-6 font-medium transition"
               >
                 <FaGithub className="inline-block mr-2" /> View on GitHub
               </a>
@@ -714,18 +770,18 @@ const MinecraftBotLanding = () => {
             About the Developer
           </h2>
 
-          <div className="bg-[#232B2B] rounded p-8 pixel-border">
+          <div className="bg-[#232B2B] p-8 pixel-border">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-40 h-40 rounded-lg overflow-hidden flex-shrink-0 pixel-border">
+              <div className="w-40 h-40 overflow-hidden flex-shrink-0 pixel-border">
                 <img
-                  src="https://github.com/TRAVNIKOVdev.png"
-                  alt="Roman Travnikov"
-                  className="w-full h-full object-cover"
+                  src="/images/developer-avatar.png"
+                  alt="Pixel-art portrait of Roman Travnikov"
+                  className="w-full h-full object-cover pixelated"
                 />
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-4 text-[#5D7C15]">
+                <h3 className="text-2xl font-bold mb-4 text-[#7DAF2B]">
                   Roman Travnikov
                 </h3>
                 <p className="text-gray-300 mb-4">
@@ -735,33 +791,12 @@ const MinecraftBotLanding = () => {
                   with game environments.
                 </p>
 
-                {/* GitHub Activity Graph */}
-                <div className="bg-[#1D1F21] p-3 rounded-lg mb-4 pixel-border">
-                  <div className="h-8 bg-[#0D1117] rounded overflow-hidden flex items-end">
-                    <div className="h-2 w-1/12 bg-[#5D7C15]"></div>
-                    <div className="h-3 w-1/12 bg-[#7DAF2B]"></div>
-                    <div className="h-4 w-1/12 bg-[#5D7C15]"></div>
-                    <div className="h-6 w-1/12 bg-[#7DAF2B]"></div>
-                    <div className="h-5 w-1/12 bg-[#5D7C15]"></div>
-                    <div className="h-7 w-1/12 bg-[#7DAF2B]"></div>
-                    <div className="h-8 w-1/12 bg-[#5D7C15]"></div>
-                    <div className="h-6 w-1/12 bg-[#7DAF2B]"></div>
-                    <div className="h-4 w-1/12 bg-[#5D7C15]"></div>
-                    <div className="h-5 w-1/12 bg-[#7DAF2B]"></div>
-                    <div className="h-7 w-1/12 bg-[#5D7C15]"></div>
-                    <div className="h-3 w-1/12 bg-[#7DAF2B]"></div>
-                  </div>
-                  <p className="text-xs text-gray-400 mt-1 text-center">
-                    GitHub Contributions (Last 12 Months)
-                  </p>
-                </div>
-
                 <div className="flex items-center gap-4">
                   <a
                     href="https://travnikov.dev"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#5D7C15] hover:text-[#7DAF2B] transition"
+                    className="text-[#7DAF2B] hover:text-[#9CCF4A] transition"
                   >
                     travnikov.dev
                   </a>
@@ -780,65 +815,79 @@ const MinecraftBotLanding = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* In-game chat section */}
       <section className="py-16 px-6 bg-[#2F2F2F]">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center text-[#E7A83B]">
-            Early Tester Feedback
+            Heard in Chat
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-[#232B2B] rounded p-6 pixel-border">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded overflow-hidden flex-shrink-0 pixel-border">
-                  <span role="img" aria-label="person" className="text-3xl">
-                    👤
-                  </span>
+          <div className="bg-black/70 p-4 md:p-6 pixel-border space-y-4">
+            {[
+              {
+                avatar: "/images/steve-avatar.png",
+                name: "DiamondMiner64",
+                color: "text-[#7DAF2B]",
+                hearts: 5,
+                text: "This bot built a better house in 5 minutes than I could in an hour. The mining optimization is insane!",
+              },
+              {
+                avatar: "/images/alex-avatar.png",
+                name: "RedstoneWizard",
+                color: "text-[#3BABE7]",
+                hearts: 4,
+                text: "Been testing the combat system — it can handle multiple creepers better than most players.",
+              },
+              {
+                avatar: null,
+                name: "Minecraft-GPT",
+                color: "text-[#E7A83B]",
+                hearts: 0,
+                text: "Task complete: shelter built before nightfall.",
+              },
+            ].map((msg) => (
+              <div key={msg.name} className="flex items-start gap-3">
+                <div className="w-8 h-8 mt-1 overflow-hidden flex-shrink-0 pixel-border bg-[#1D1F21] flex items-center justify-center">
+                  {msg.avatar ? (
+                    <img
+                      src={msg.avatar}
+                      alt=""
+                      className="w-full h-full object-cover pixelated"
+                    />
+                  ) : (
+                    <RiRobot2Fill size={20} className="text-[#3BABE7]" />
+                  )}
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold text-[#5D7C15]">
-                    DiamondMiner64
-                  </h4>
-                  <div className="flex gap-1 my-1">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-[#E7A83B]">
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-gray-300">
-                    &quot;This bot built a better house in 5 minutes than I could in
-                    an hour. The mining optimization is insane!&quot;
-                  </p>
-                </div>
+                <p className="text-lg leading-snug">
+                  <span className={`font-bold ${msg.color}`}>
+                    &lt;{msg.name}&gt;
+                  </span>{" "}
+                  <span className="text-gray-100">{msg.text}</span>
+                  {msg.hearts > 0 && (
+                    <span
+                      className="ml-2 tracking-widest align-middle"
+                      role="img"
+                      aria-label={`rated ${msg.hearts} of 5 hearts`}
+                    >
+                      {[...Array(5)].map((_, i) => (
+                        <span
+                          key={i}
+                          className={
+                            i < msg.hearts ? "text-[#B93333]" : "text-[#4C4C4C]"
+                          }
+                        >
+                          {"♥"}
+                        </span>
+                      ))}
+                    </span>
+                  )}
+                </p>
               </div>
-            </div>
+            ))}
 
-            <div className="bg-[#232B2B] rounded p-6 pixel-border">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded overflow-hidden flex-shrink-0 pixel-border">
-                  <span role="img" aria-label="person" className="text-3xl">
-                    👤
-                  </span>
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-[#5D7C15]">
-                    RedstoneWizard
-                  </h4>
-                  <div className="flex gap-1 my-1">
-                    {[...Array(4)].map((_, i) => (
-                      <span key={i} className="text-[#E7A83B]">
-                        ★
-                      </span>
-                    ))}
-                    <span className="text-gray-500">★</span>
-                  </div>
-                  <p className="text-gray-300">
-                    &quot;Been testing the combat system - it can handle multiple
-                    creepers better than most players. Really impressive AI!&quot;
-                  </p>
-                </div>
-              </div>
+            {/* Fake chat input line */}
+            <div className="border-t-2 border-[#2F2F2F] pt-3 text-lg text-gray-400">
+              &gt; <span className="chat-cursor">_</span>
             </div>
           </div>
         </div>
@@ -851,7 +900,7 @@ const MinecraftBotLanding = () => {
             This project is not affiliated with Mojang or Microsoft. Minecraft
             is a trademark of Mojang Synergies AB.
           </p>
-          <p className="text-gray-500">
+          <p className="text-gray-400">
             &copy; {new Date().getFullYear()} Roman Travnikov. All rights
             reserved.
           </p>
